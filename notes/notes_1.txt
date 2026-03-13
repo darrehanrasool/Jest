@@ -1,1 +1,7 @@
-vitest : npm install vitest --save-dev
+jest          : npm install jest   --save-dev
+vitest        : npm install vitest --save-dev
+running  test : npm test
+watching test : npm run test:watch
+patern (aaa)  : arrange act assert
+setting       : --globals
+extension     : app.test.js  app.spec.js
