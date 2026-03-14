@@ -13,7 +13,6 @@ function formSubmitHandler(event) {
   event.preventDefault();
   const formData = new FormData(form);
   const numberInputs = extractNumbers(formData);
-
   let result = "";
 
   try {
@@ -27,6 +26,7 @@ function formSubmitHandler(event) {
     result = add(numbers).toString();
   } catch (error) {
     result = error.message;
+    console.log(result);
   }
 
   let resultText = "";
