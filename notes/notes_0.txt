@@ -3,8 +3,8 @@ tools               : Jest , cypress ,postman.
 jest                : unit testing and intergration testing.
 cypress             : web ui automation.
 postman             : api testing ie GET PUT POST PATCH DELETE.
-unit testing        : testing small funtionality ie funtion().
-integration testing : testing how multiple modules units and funtion() work together.
+unit testing        : testing small funtionality ie funtion class component
+integration testing : testing how multiple modules units and funtions work together.
 e2e testing         : web ui automation.
 jest                : slow for ES6 module
 vitest              : fast for ES6 module
