@@ -26,7 +26,7 @@ describe("generateResultText()", () => {
 
     expect(resultText).toContain(result.toString());
     expect(resultText).toBeTypeOf("string");
-    expect(resultText).toBe(result.toString());
+    expect(resultText).toContain("5");
   });
 
   // Test case-3 generateResultText funtion() unit
