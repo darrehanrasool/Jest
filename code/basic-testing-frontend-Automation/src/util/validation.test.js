@@ -11,6 +11,7 @@ describe("all about validateStringNotEmpty funtion buddy", () => {
     };
     expect(validationFn).toThrow();
   });
+
   // Test case-2 validateStringNotEmpty() unit
   it("should throw an error with a message that contains a reason (must not be empty)", () => {
     const input = "";
@@ -19,6 +20,7 @@ describe("all about validateStringNotEmpty funtion buddy", () => {
     };
     expect(validationFn).toThrow(/Invalid input - must not be empty./);
   });
+
   // Test case-3 validateStringNotEmpty() unit
   it("should throw an error if a long string of blanks is provided", () => {
     const input = "       ";
@@ -27,6 +29,7 @@ describe("all about validateStringNotEmpty funtion buddy", () => {
     };
     expect(validationFn).toThrow();
   });
+
   // Test case-4 validateStringNotEmpty() unit
   it("should throw an error if any other value than a string is provided", () => {
     const inputNum = 1;
@@ -52,6 +55,7 @@ describe("all about validateStringNotEmpty funtion buddy", () => {
     expect(validationFnObj).toThrow();
     expect(validationFnArr).toThrow();
   });
+
   // Test case-5 validateStringNotEmpty() unit
   it("should not throw an error, if a non-empty string is provided", () => {
     const input = "valid";
@@ -71,6 +75,7 @@ describe("all about validateNumber funtion buddy", () => {
     };
     expect(validationFn).toThrow();
   });
+
   // Test case-2  validateNumber() unit
   it("should throw an error with a message that contains a reason (invalid number)", () => {
     const input = NaN;
@@ -79,6 +84,7 @@ describe("all about validateNumber funtion buddy", () => {
     };
     expect(validationFn).toThrow(/Invalid number input./);
   });
+
   // Test case-3  validateNumber() unit
   it("should throw an error if a non-numeric value is provided", () => {
     const input = "1";
@@ -87,6 +93,7 @@ describe("all about validateNumber funtion buddy", () => {
     };
     expect(validationFn).toThrow();
   });
+
   // Test case-4 validateNumber() unit
   it("should not throw an error, if a number is provided", () => {
     const input = 1;

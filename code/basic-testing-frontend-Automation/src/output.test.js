@@ -3,6 +3,7 @@ import { describe, it, expect } from "vitest";
 import { generateResultText } from "./output";
 
 describe("generateResultText()", () => {
+  // Test case-1 generateResultText funtion() unit
   it("should return a string, no matter which value is passed in", () => {
     const val1 = 1;
     const val2 = "invalid";
@@ -17,27 +18,27 @@ describe("generateResultText()", () => {
     expect(result3).toBeTypeOf("string");
   });
 
+  // Test case-2 generateResultText funtion() unit
   it("should return a string that contains the calculation result if a number is provided as a result", () => {
     const result = 5;
 
     const resultText = generateResultText(result);
 
     expect(resultText).toContain(result.toString());
+    expect(resultText).toBeTypeOf("string");
+    expect(resultText).toBe(result.toString());
   });
 
+  // Test case-3 generateResultText funtion() unit
   it('should return an empty string if "no-calc" is provided as a result', () => {
     const result = "no-calc";
-
     const resultText = generateResultText(result);
-
     expect(resultText).toBe("");
   });
 
   it('should return a string that contains "Invalid" if "invalid" is provided as a result', () => {
     const result = "invalid";
-
     const resultText = generateResultText(result);
-
     expect(resultText).toContain("Invalid");
   });
 });

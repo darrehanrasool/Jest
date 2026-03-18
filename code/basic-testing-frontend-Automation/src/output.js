@@ -6,9 +6,9 @@ export function generateResultText(calculationResult) {
   } else if (calculationResult !== "no-calc") {
     resultText = "Result: " + calculationResult;
   }
-
   return resultText;
 }
+
 export function outputResult(data) {
   const output = document.getElementById("result");
   output.textContent = data;

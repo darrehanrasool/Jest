@@ -1,4 +1,5 @@
 import { validateNumber, validateStringNotEmpty } from "./validation";
+
 export function transformToNumber(value) {
   if (value === undefined) {
     throw Error("empty input");
@@ -6,7 +7,6 @@ export function transformToNumber(value) {
   if (arguments.length !== 1) {
     throw Error("only one argument allowed");
   }
-  //return NaN
   return +value;
 }
 

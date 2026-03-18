@@ -1,7 +1,7 @@
 testing             : verify if something is working as intended.
-tools               : Jest , cypress ,postman.
+tools               : Jest,vitest, cypress ,postman.
 jest                : unit testing and intergration testing.
-cypress             : web ui automation.
+cypress             : e2e testing
 postman             : api testing ie GET PUT POST PATCH DELETE.
 unit testing        : testing small funtionality ie funtion class component
 integration testing : testing how multiple modules units and funtions work together.
