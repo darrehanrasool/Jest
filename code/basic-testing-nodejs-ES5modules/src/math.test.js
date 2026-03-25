@@ -1,6 +1,5 @@
 import { describe, expect, it } from "vitest";
 import { add } from "./math";
-// Arrange Act Assert (aaa) Pattern.
 describe("all about add funtion buddy", () => {
   // Test case-1 Add funtion() unit
   it("testing add funtion argument array of numbers", () => {

@@ -1,7 +1,5 @@
 import { it, expect, describe } from "vitest";
-
 import { validateNumber, validateStringNotEmpty } from "./validation";
-
 describe("all about validateStringNotEmpty funtion buddy", () => {
   // Test case-1 validateStringNotEmpty() unit
   it("should throw an error, if an empty string is provided", () => {
@@ -33,7 +31,6 @@ describe("all about validateStringNotEmpty funtion buddy", () => {
     const inputBool = true;
     const inputObj = {};
     const inputArr = [];
-
     const validationFnNum = () => {
       validateStringNotEmpty(inputNum);
     };
@@ -46,7 +43,6 @@ describe("all about validateStringNotEmpty funtion buddy", () => {
     const validationFnArr = () => {
       validateStringNotEmpty(inputArr);
     };
-
     expect(validationFnNum).toThrow();
     expect(validationFnBool).toThrow();
     expect(validationFnObj).toThrow();

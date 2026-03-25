@@ -1,22 +1,21 @@
-const express = require('express');
-
-const { add } = require('./src/math');
-const { extractNumbers, extractResultQueryParam } = require('./src/parser');
-const { transformToNumber } = require('./src/util/numbers');
-const { validateNumber, validateStringNotEmpty } = require('./src/util/validation');
-
+const express = require("express");
+const { add } = require("./src/math");
+const { extractNumbers, extractResultQueryParam } = require("./src/parser");
+const { transformToNumber } = require("./src/util/numbers");
+const {
+  validateNumber,
+  validateStringNotEmpty,
+} = require("./src/util/validation");
+const port = 3000;
 const app = express();
-
 app.use(express.urlencoded({ extended: false }));
-
-app.get('/', (req, res) => {
+app.get("/", (req, res) => {
   const result = extractResultQueryParam(req);
-  let resultText = '';
-
-  if (result === 'invalid') {
-    resultText = 'Invalid input. You must enter valid numbers.';
-  } else if (result !== 'no-calc') {
-    resultText = 'Result: ' + result;
+  let resultText = "";
+  if (result === "invalid") {
+    resultText = "Invalid input. You must enter valid numbers.";
+  } else if (result !== "no-calc") {
+    resultText = "Result: " + result;
   }
   const htmlContent = `
     <html>
@@ -55,13 +54,10 @@ app.get('/', (req, res) => {
       </body>
     </html>
   `;
-
   res.send(htmlContent);
 });
-
-app.post('/calculate', (req, res) => {
-  let result = '';
-
+app.post("/calculate", (req, res) => {
+  let result = "";
   const numberInputs = extractNumbers(req);
   const numbers = [];
   try {
@@ -75,8 +71,9 @@ app.post('/calculate', (req, res) => {
   } catch (error) {
     result = error.message;
   }
-
-  res.redirect('/?result=' + result);
+  res.redirect("/?result=" + result);
 });
 
-app.listen(3000);
+app.listen(port, () => {
+  console.log(`server running on port http://localhost:${port}`);
+});

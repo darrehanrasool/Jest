@@ -1,22 +1,19 @@
 import { describe, expect, it } from "vitest";
-import { transformToNumber } from "./numbers";
+import { cleanNumbers, transformToNumber } from "./numbers";
 describe("all about transformToNumber  funtion buddy ", () => {
   // Test case-1 transformToNumber() unit
   it("it should yeild number on providing number of string type", () => {
     let data_1 = "1";
     let result_1 = transformToNumber(data_1);
     expect(result_1).toBe(+data_1);
-    // catch here NaN is falsey value of type number
     expect(result_1).toBeTypeOf("number");
   });
   // Test case-2 transformToNumber() unit
   it("it should yeild NaN on providing input of string type", () => {
     let data_2 = "string";
     let data_3 = {};
-
     let result_2 = transformToNumber(data_2);
     let result_3 = transformToNumber(data_3);
-
     expect(result_2).toBeNaN();
     expect(result_3).toBeNaN();
   });
@@ -35,5 +32,22 @@ describe("all about transformToNumber  funtion buddy ", () => {
       transformToNumber(data_1, data_2);
     };
     expect(result_4).toThrow(/only one argument allowed/);
+  });
+});
+
+describe("all about cleanNumbers funtion buddy ", () => {
+  // Test case-1 cleanNumbers() unit
+  it("should return array of numbers if i pass array of string numbers", () => {
+    const data_1 = ["1", "2"];
+    const value_1 = cleanNumbers(data_1);
+    expect(value_1[0]).toBeTypeOf("number");
+  });
+  // Test case-2 cleanNumbers() unit
+  it("should throw an error if at least one invalid input is provided", () => {
+    const data_1 = ["", "1"];
+    const value_1 = () => {
+      cleanNumbers(data_1);
+    };
+    expect(value_1).toThrow();
   });
 });
