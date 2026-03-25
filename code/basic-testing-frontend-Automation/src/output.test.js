@@ -1,7 +1,5 @@
 import { describe, it, expect } from "vitest";
-
 import { generateResultText } from "./output";
-
 describe("generateResultText()", () => {
   // Test case-1 generateResultText funtion() unit
   it("should return a string, no matter which value is passed in", () => {
@@ -36,6 +34,7 @@ describe("generateResultText()", () => {
     expect(resultText).toBe("");
   });
 
+  // Test case-4 generateResultText funtion() unit
   it('should return a string that contains "Invalid" if "invalid" is provided as a result', () => {
     const result = "invalid";
     const resultText = generateResultText(result);

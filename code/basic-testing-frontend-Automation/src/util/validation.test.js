@@ -1,5 +1,4 @@
 import { it, expect, describe } from "vitest";
-
 import { validateNumber, validateStringNotEmpty } from "./validation";
 
 describe("all about validateStringNotEmpty funtion buddy", () => {
